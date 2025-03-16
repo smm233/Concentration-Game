@@ -8,6 +8,7 @@
 body {
     background-image: url(images/tcg_bg.png);
     background-size: cover;
+    background-repeat: no-repeat;
     text-align: center; 
 }
 
@@ -15,4 +16,10 @@ body {
     height: 523px;
     width: 475px;
     margin: 0 auto;
+}
+
+.card {
+    height: 128px;
+    width: 90px;
+    margin: 2.5px;
 }
