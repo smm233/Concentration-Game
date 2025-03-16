@@ -48,8 +48,7 @@ function startGame() {
             card.id = i.toString() + "-" + j.toString();
             card.src = "images/" + cardImg + ".png";
             card.classList.add("card");
-            card.addEventListener("click", selectCard());
-            console.log(card.src);
+            card.addEventListener("click", selectCard);
             document.getElementById("board").append(card);
             
         }
