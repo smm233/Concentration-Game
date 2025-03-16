@@ -11,22 +11,74 @@ var cards = [
     "Ningguang",
     "Xianyun",
     "Xinyan",
-    "YaeMiko"
+    "YaeMiko",
+    "Ayato",
+    "Baizhu",
+    "Bennett",
+    "Charlotte",
+    "Chevreuse",
+    "Chiori",
+    "Chongyun",
+    "Collei",
+    "Cyno",
+    "Diluc",
+    "Dori",
+    "Faruzan",
+    "Freminet",
+    "Ganyu",
+    "Itto",
+    "Kaeya",
+    "Kaveh",
+    "Kazuha",
+    "Kirara",
+    "Lynette",
+    "Mona",
+    "Mualani",
+    "Nahida",
+    "Neuvillette",
+    "Qiqi",
+    "Rosaria",
+    "Sayu",
+    "Shinobu",
+    "Sigewinne",
+    "Tighnari",
+    "Venti",
+    "Wanderer",
+    "Wriothesley",
+    "Xiangling",
+    "Yanfei",
+    "Yoimiya",
+    "Yunjin",
+    "Zhongli"
 ];
 
 var cardSet;
+var firstCards = [];
 var card1Selected;
 var card2Selected;
 var board = [];
 
 window.onload = function() {
+    chooseCards();
     shuffleCards();
     startGame();
 }
 
+function chooseCards() {
+    //randomly choose first 9 cards from cards array
+    for (let i = 0; i < 10; i++) {
+        let j = Math.floor(Math.random() * cards.length);
+        let card = cards[j];
+        firstCards.push(card);
+    }
+    console.log(firstCards);
+}
+
 function shuffleCards() {
-    cardSet = cards.concat(cards);
+    cardSet = firstCards.concat(firstCards);
     console.log(cardSet);
+
+    //shuffle those 10 cards
     for (let i = 0; i < cardSet.length; i++) {
         let j = Math.floor(Math.random() * cardSet.length);
 
