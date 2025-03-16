@@ -1,14 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Carter+One&display=swap');
 
 * {
-    padding: 0;
-    margin: 0;
     box-sizing: border-box;
     font-family: 'Carter One', sans-serif;
 }
 
 body {
-    height: 100vh;
     background-image: url(images/tcg_bg.png);
     background-size: cover;
+    text-align: center; 
+}
+
+#board {
+    height: 523px;
+    width: 475px;
+    margin: 0 auto;
 }
