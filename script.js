@@ -5,7 +5,7 @@ var cards = [
     "Beidou",
     "Clorinde",
     "Dehya",
-    // "Furina",
+    "Furina",
     "KujouSara",
     "Navia",
     "Ningguang",
@@ -15,8 +15,8 @@ var cards = [
 ];
 
 var cardSet;
-var cardSelected;
-var frontSelected;
+var card1Selected;
+var card2Selected;
 var board = [];
 
 window.onload = function() {
@@ -55,7 +55,7 @@ function startGame() {
         board.push(row);
     }
     console.log(board);
-    setTimeout(hideCards, 1500);
+    setTimeout(hideCards, 1000);
 }
 
 function hideCards() {
@@ -65,4 +65,36 @@ function hideCards() {
             card.src = "images/back.png";
         }
     }
+}
+
+function selectCard() {
+    if(this.src.includes("images/back")) {
+        if(!card1Selected) {
+            card1Selected = this;
+            let coords = card1Selected.id.split("-");
+            let i = parseInt(coords[0]);
+            let j = parseInt(coords[1]);
+
+            card1Selected.src = "images/" + board[i][j] + ".png";
+        } else if(!card2Selected && this !=  card1Selected) {
+            card2Selected = this;
+            let coords = card2Selected.id.split("-");
+            let i = parseInt(coords[0]);
+            let j = parseInt(coords[1]);
+
+            card2Selected.src = "images/" + board[i][j] + ".png";
+            setTimeout(checkCards, 1000);
+        }
+    }
+}
+
+function checkCards() {
+    if(card1Selected.src != card2Selected.src) {
+        card1Selected.src = "images/back.png"; 
+        card2Selected.src = "images/back.png";
+        errors++;
+        document.getElementById("errors").innerText = errors;
+    }
+    card1Selected = null;
+    card2Selected = null;
 }
