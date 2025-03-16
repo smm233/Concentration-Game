@@ -13,13 +13,14 @@ body {
 }
 
 #board {
-    height: 523px;
-    width: 475px;
+    height: 570px;
+    width: 690px;
     margin: 0 auto;
 }
 
-.card {
-    height: 128px;
-    width: 90px;
-    margin: 2.5px;
+/* Card size is 420 x 720 */
+.card { 
+    height: 180px;
+    width: 105px;
+    margin: 5px;
 }
