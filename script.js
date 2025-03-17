@@ -65,14 +65,18 @@ window.onload = function() {
 }
 
 function chooseCards() {
-    //randomly choose first 9 cards from cards array
-    for (let i = 0; i < 9; i++) {
+    let chosenIndices = new Set(); // Set to track chosen indices
+
+    while (firstCards.length < 9) {
         let j = Math.floor(Math.random() * cards.length);
-        let card = cards[j];
-        firstCards.push(card);
+        if (!chosenIndices.has(j)) { // Ensure uniqueness
+            chosenIndices.add(j);
+            firstCards.push(cards[j]);
+        }
     }
     console.log(firstCards);
 }
+
 
 function shuffleCards() {
     cardSet = firstCards.concat(firstCards);
