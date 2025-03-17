@@ -66,7 +66,7 @@ window.onload = function() {
 
 function chooseCards() {
     //randomly choose first 9 cards from cards array
-    for (let i = 0; i < 10; i++) {
+    for (let i = 0; i < 9; i++) {
         let j = Math.floor(Math.random() * cards.length);
         let card = cards[j];
         firstCards.push(card);
